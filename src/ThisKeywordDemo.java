@@ -1,21 +1,40 @@
+
+
+
 import java.util.Scanner;
 
 class ThisDemo {
+    // 1. An integer instance variable named 'value'
     int value;
 
-    // TODO: Define setValue(int value)
-    // Use 'this.value = value' to resolve naming conflict
-    
-    // TODO: Define display() to print "Value: " + value
+    // 2. A method setValue(int value) that uses 'this' to distinguish 
+    // the instance variable from the parameter.
+    void setValue(int value) {
+        this.value = value; 
+    }
+
+    // 3. A method display() to print the value.
+    void display() {
+        System.out.println("Value: " + this.value);
+    }
 }
 
 public class ThisKeywordDemo {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // TODO: Read the integer input
-        
-        // TODO: Create ThisDemo object
-        // TODO: Call setValue() with the input
-        // TODO: Call display()
+
+        // Read the integer input
+        int input = sc.nextInt();
+
+        // Create the ThisDemo object
+        ThisDemo demo = new ThisDemo();
+
+        // Set the value using the method
+        demo.setValue(input);
+
+        // Display the value
+        demo.display();
+
+        sc.close();
     }
 }
